@@ -4,7 +4,7 @@ mục bạn đặt --}}
 @section('content')
     <div class="card">
         <div class="card-header">
-            <h1>Product kakaka</h1>
+            <h1>Product</h1>
         </div>
         <div class="card-body">
             <table class="table table-bordered table-striped">
