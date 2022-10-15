@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\CategoryController;
+
+use App\Http\Controllers\Frontend\FrontendController;
+
 use App\Http\Controllers\Admin\ProductController;
 use Illuminate\Support\Facades\Auth;
 
@@ -16,10 +19,12 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+Route::get('/','\App\Http\Controllers\Frontend\FrontendController@index');
+Route::get('/category',[FrontendController::class,'category']);
+Route::get('view-category/{slug}',[FrontendController::class,'viewcategory']);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

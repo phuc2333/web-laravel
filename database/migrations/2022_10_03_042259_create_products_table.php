@@ -15,7 +15,9 @@ class CreateProductsTable extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('cate_id');
+            //$table->bigInteger('cate_id');
+            $table->bigInteger('cate_id')->unsigned();
+            $table->foreign('cate_id')->references('id')->on('categories');
             $table->string('name');
             $table->string('slug');
             $table->mediumText('small_description');
@@ -31,6 +33,8 @@ class CreateProductsTable extends Migration
             $table->mediumText('meta_keyword');
             $table->mediumText('meta_description');
             $table->timestamps();
+
+           
         });
     }
     /**
